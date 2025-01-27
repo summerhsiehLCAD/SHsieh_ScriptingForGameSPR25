@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    int Kraken = 10;
+    int Kraken = 32;
     int Sok = 25;
     int Selene = 18;
     int total;
