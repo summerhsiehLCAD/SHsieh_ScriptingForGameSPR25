@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Script2 : MonoBehaviour
 {
-    int Kraken = 32;
-    int Sok = 25;
-    int Selene = 18;
-    int total;
+    public float Haewoo;
+    public float Kuja;
+    public float Lev;
+    float total;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Haewoo = Haewoo * Haewoo + 5;
+
+        total = Haewoo + Kuja * Lev;
+
+        Debug.Log(total);
     }
 
     // Update is called once per frame
