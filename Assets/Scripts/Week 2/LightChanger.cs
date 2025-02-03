@@ -11,6 +11,7 @@ public class LightChanger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         ChangeLightColor(Color.green);
         //ChangeLightColor(Color.blue); //whatever we pass into this function is what the
         //function is going to change the color to.
