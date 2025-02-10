@@ -12,6 +12,8 @@ public class LightChanger : MonoBehaviour
     void Start()
     {
 
+        
+
         ChangeLightColor(Color.green);
         //ChangeLightColor(Color.blue); //whatever we pass into this function is what the
         //function is going to change the color to.
@@ -67,6 +69,42 @@ public class LightChanger : MonoBehaviour
     {
         lightWeWantTochange.color = Santa;
         //Santa acts as a placeholder name for anything that gets passed in.
+
+        if(lightWeWantTochange.color == Color.green)
+        {
+            lightWeWantTochange.intensity = 100f;
+        }
+        else if(lightWeWantTochange.color == Color.red)
+        {
+            lightWeWantTochange.transform.position += Vector3.right * 3;
+            //Vector3.right will move the object to its right x axis by 3 positive spaces.
+        }
+        else if(lightWeWantTochange.color == Color.blue)
+        {
+            lightWeWantTochange.gameObject.SetActive(false);
+        }
+        else
+        {
+            lightWeWantTochange.transform.position = Vector3.zero;
+            //if none of the conditions above were met, do this if it's anything other than gree, red, or blue.
+        }
+
+        if(lightWeWantTochange.color == Color.green || lightWeWantTochange.color == Color.red)
+        {
+            {
+                //if the color is green or red, it will run this code.
+            }
+        }
+
+        if(lightWeWantTochange.color == Color.blue && lightWeWantTochange.intensity > 50f)
+        {
+            // If the color is blue AND the intensity of the light is greter than 5-. it will run this code.
+        }
+
+        if(lightWeWantTochange.color == Color.white || (lightWeWantTochange.color == Color.black && lightWeWantTochange.intensity <= 25f))
+        {
+            //if the color is white, OR the color is both black and its intensity is less than or greater than 35, it will run this code.
+        }
     }
 
     private void OnEnable() //A private function can only be called from within the script.
