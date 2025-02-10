@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class AudioPlay : MonoBehaviour
 {
-    public AweboFly aweboAudio;
-
+    
     AudioSource Game;
     AudioSource awebosound;
     
