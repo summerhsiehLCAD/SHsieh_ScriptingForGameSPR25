@@ -11,6 +11,13 @@ TagManager:
   - Floor
   - UpForce
   - DownForce
+  - Homework_Platform
+  - Marble
+  - Platform
+  - ColorShift
+  - Green
+  - Yellow
+  - Blue
   layers:
   - Default
   - TransparentFX
