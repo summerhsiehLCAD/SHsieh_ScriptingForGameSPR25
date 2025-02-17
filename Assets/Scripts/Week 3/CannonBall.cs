@@ -13,6 +13,21 @@ public class CannonBall : MonoBehaviour
     {
         
     }
+
+
+    public void AddRandomForce()
+    {
+        Vector3 randomDirection = Vector3.zero;
+
+        randomDirection.x = Random.Range(-1f, 1f);
+        randomDirection.y = Random.Range(0, 1f);
+        randomDirection.z = Random.Range(-1f, 1f);
+
+        float forceMultiplier = Random.Range(100f, 750f);
+
+        this.gameObject.GetComponent<Rigidbody>().AddForce(randomDirection * forceMultiplier);
+    }
+
     private void OnCollisionEnter(Collision otherObject)
     {
         Debug.Log(otherObject.gameObject.name);
