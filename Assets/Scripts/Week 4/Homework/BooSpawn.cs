@@ -12,7 +12,6 @@ public class BooSpawn : MonoBehaviour
     void Start()
     {
         
-
         SpawnBoos();
     }
 

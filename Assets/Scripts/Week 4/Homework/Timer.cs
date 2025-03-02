@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+
 public class Timer : MonoBehaviour
 {
     public float timer = 30f;
@@ -11,6 +12,12 @@ public class Timer : MonoBehaviour
 
     public UI_Counter counterScript;
 
+    public BooSpawn booCount;
+
+    public GameObject gClear;
+
+    public GameObject gOver;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +27,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hasTimerFinished == false)
+        if (hasTimerFinished == false)
         {
             if (timer > 0)
             {
@@ -36,6 +43,27 @@ public class Timer : MonoBehaviour
 
             timerText.text = Mathf.Ceil(timer).ToString("F0");
         }
-      
+
+        if (hasTimerFinished == true)
+        {
+            Compare();
+        }
+
+    }
+
+    private void Compare()
+    {
+        BooSpawn BooSpawn = booCount.GetComponent<BooSpawn>();
+        UI_Counter UI_Counter = counterScript.GetComponent<UI_Counter>(); 
+
+            if (BooSpawn.booSpawnCount == UI_Counter.counter)
+            {
+                gClear.SetActive(true);
+            }
+            else
+            {
+                gOver.SetActive(true);
+            }
+        
     }
 }
