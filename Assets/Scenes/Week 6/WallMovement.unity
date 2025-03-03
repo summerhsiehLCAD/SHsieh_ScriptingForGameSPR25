@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb38d060a1845246a42501645415a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorColor: 2
 --- !u!1001 &498282794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -769,7 +770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324ff62411c1025409420df690068b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasKey: 0
+  hasRedKey: 0
+  hasBlueKey: 0
+  hasYellowKey: 0
   playerCamera: {fileID: 977685457}
 --- !u!1 &755004831
 GameObject:
