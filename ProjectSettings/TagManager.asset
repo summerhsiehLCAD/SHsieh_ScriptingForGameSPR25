@@ -19,6 +19,8 @@ TagManager:
   - Yellow
   - Blue
   - BooGhost
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

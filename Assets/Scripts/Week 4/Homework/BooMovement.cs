@@ -17,7 +17,7 @@ public class BooMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = Random.Range(30f, 50f);
+        speed = Random.Range(20f, 40f);
 
         rbody.AddForce(moveDirection * speed * Time.deltaTime);
 

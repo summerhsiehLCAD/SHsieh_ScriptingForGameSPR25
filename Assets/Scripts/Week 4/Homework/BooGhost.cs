@@ -12,9 +12,10 @@ public class BooGhost : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeRangeRandom = Random.Range(5f, 10f);
-        //make the boo disappear after a set amt of time
        
+        //make the boo disappear after a set amt of time
+        timeRangeRandom = Random.Range(10f, 15f);
+
     }
 
     // Update is called once per frame
@@ -32,20 +33,15 @@ public class BooGhost : MonoBehaviour
 
         foreach (BooGhost ghost in ghosts)
         {
-            ghost.booDisappear();
             ghost.BooTimer();
+            ghost.booDisappear();
         }
         
     }
 
-   void booDisappear()
-    {
-        this.gameObject.SetActive(false);
-    }
-    
     void BooTimer()
     {
-        float timeRangeRandom = Random.Range(5f, 10f);
+
         timeRangeRandom -= Time.deltaTime;
 
         if (timeRangeRandom >= 0)
@@ -53,6 +49,13 @@ public class BooGhost : MonoBehaviour
             booDisappear();
         }
     }
+
+    void booDisappear()
+    {
+        this.gameObject.SetActive(false);
+    }
+    
+   
 
     // PLEASE TALK TO ANTHONY ABOUT BOO DISAPPEARING 
     // GO AND FIX THE ISSUE WITH BOUNDARY CLIPPING
