@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
 
     public GameObject gOver;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,6 +48,8 @@ public class Timer : MonoBehaviour
         if (hasTimerFinished == true)
         {
             Compare();
+            counterScript.ActualCounterUI();
+
         }
 
     }
@@ -55,6 +58,8 @@ public class Timer : MonoBehaviour
     {
         BooSpawn BooSpawn = booCount.GetComponent<BooSpawn>();
         UI_Counter UI_Counter = counterScript.GetComponent<UI_Counter>(); 
+
+        
 
             if (BooSpawn.booSpawnCount == UI_Counter.counter)
             {
@@ -66,4 +71,6 @@ public class Timer : MonoBehaviour
             }
         
     }
+
+  
 }
