@@ -21,6 +21,7 @@ TagManager:
   - BooGhost
   - Key
   - Door
+  - VisionCone
   layers:
   - Default
   - TransparentFX
