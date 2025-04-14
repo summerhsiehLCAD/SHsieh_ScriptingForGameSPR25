@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public int health;
     public int attackDamage;
-    public float attackRange;
+    public float attackRange = 5f;
 
     public float attackSpeed;
 
@@ -40,6 +40,8 @@ public class Enemy : MonoBehaviour
         {
             if (navAgent.remainingDistance < 0.5f) //Enemy has reached the LAST KNOWN location of the player
             {
+                
+
                 if (Vector3.Distance(this.transform.position, player.transform.position) > aggroRange)
                 //If player is further than the aggro range...
                 {
@@ -63,6 +65,7 @@ public class Enemy : MonoBehaviour
                     }
                 }
             }
+            navAgent.stoppingDistance = attackRange; //prevents the enemy from getting too close to the player
 
             //If player is within attack range.
             if (Vector3.Distance(this.transform.position, player.transform.position) > attackRange)
@@ -95,7 +98,7 @@ public class Enemy : MonoBehaviour
                 if (IsPlayerInLos() == true) //and player is within LOS...
                 {
 
-                    navAgent.isStopped = true; //Stop the nav movement...
+                    //navAgent.isStopped = true; //Stop the nav movement...
                     this.transform.LookAt(player.transform.position); //Keeps looking at player...
                     //Allows for it to turn and look at you when it's stopped
 
@@ -160,24 +163,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void SeePlayer()
-    {
-        //The raycast makes it so that the enemy can't "see" us through the walls
-
-        RaycastHit hit;
-
-        Vector3 dir = player.transform.position - this.transform.position;
-        dir.Normalize();
-
-        if (Physics.Raycast(this.transform.position, dir, out hit))
-        {
-            if (hit.collider.tag == "Player")
-            {
-                hasSeenPlayer = true;
-            }
-        }
-    }
-
     protected bool IsPlayerInLos()
     {
         RaycastHit hit;
@@ -197,6 +182,17 @@ public class Enemy : MonoBehaviour
             }
         }
       return false;
+    }
+
+    public void SeePlayer()
+    {
+
+        if (IsPlayerInLos() == true)
+        {
+                hasSeenPlayer = true;
+                navAgent.stoppingDistance = attackRange;
+            
+        }
     }
 
 }
