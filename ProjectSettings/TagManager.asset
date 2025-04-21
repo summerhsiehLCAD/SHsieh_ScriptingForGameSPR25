@@ -22,6 +22,10 @@ TagManager:
   - Key
   - Door
   - VisionCone
+  - Horizontal
+  - Vertical
+  - Chiikawa
+  - Background
   layers:
   - Default
   - TransparentFX
