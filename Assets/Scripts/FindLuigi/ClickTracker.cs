@@ -4,7 +4,9 @@ using UnityEngine;
 public class ClickTracker : MonoBehaviour
 {
     public TextMeshProUGUI clickCount;
-    
+
+    public AudioPlayer audioPlay;
+
     public GameObject WinScreen;
 
     public int amtClicks = 0;
@@ -40,11 +42,13 @@ public class ClickTracker : MonoBehaviour
                     Debug.Log("Yay!!!");
                     WinScreen.SetActive(true);
                     allowClicking = false;
+                    audioPlay.WinAudio();
                 }
                 
             }
             else
             {
+                audioPlay.MisClickAudio();
                 Debug.Log("Womp, womp, try again!");
                 amtClicks++;
             }
